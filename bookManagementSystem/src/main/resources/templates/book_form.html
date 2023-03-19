@@ -1,0 +1,32 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container">
+	<h5 class="my-3 border-bottom pb-2">책 등록</h5>
+	<form th:object="${bookForm}" method="POST">
+		<div class="alert alert-danger" role="alert"
+			th:if="${#fields.hasAnyErrors()}">
+			<div th:each="err : ${#fields.allErrors()}" th:text="${err}" />
+		</div>
+		<div class="mb-3">
+			<label for="title" classs="form-label">제목</label> <input
+				th:field="*{title}" id="title" class="form-control">
+		</div>
+		<div class="mb-3">
+			<label for="category" class="form-label">카테고리</label> <input
+				th:field="*{category}" class="form-control"></input>
+		</div>
+		<div class="mb-3">
+			<label for="nation" class="form-label">국가</label> <input
+				th:field="*{nation}" class="form-control"></input>
+		</div>
+		<div class="mb-3">
+			<label for="genre" class="form-label">장르</label> <input
+				th:field="*{genre}" class="form-control"></input>
+		</div>
+		<div class="mb-3">
+			<label for="price" class="form-label">가격</label> <input
+				th:field="*{price}" class="form-control"></input>
+		</div>
+		<input type="submit" value="저장하기" class="btn btn-primary my-2">
+	</form>
+</div>
+</html>

@@ -1,0 +1,22 @@
+<html layout:decorate="~{layout}"></html>
+<div layout:fragment="content">
+	<table>
+		<thead>
+			<tr>
+				<th>제목</th>
+				<th>카테고리</th>
+				<th>가격</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="book : ${bookList}">
+				<td><a th:href="@{|/book/detail/${book.id}|}"
+					th:text="${book.title}"> </a></td>
+				<td th:text="${book.category}"></td>
+				<td th:text="${book.price}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<a th:href="@{/book/create}"
+		class="btn btn-sm btn-outline-secondary" th:text="생성"></a>
+</div>
