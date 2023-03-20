@@ -2,8 +2,8 @@ var slides = document.querySelector(".slides"),
   slide = document.querySelectorAll(".slides li"),
   currentIdx = 0,
   slideCount = slide.length,
-  slideWidth = 150,
-  slideMargin = 20,
+  slideWidth = 180,
+  slideMargin = 25,
   prevBtn = document.querySelector(".left"),
   nextBtn = document.querySelector(".right");
 

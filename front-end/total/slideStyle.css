@@ -21,12 +21,12 @@ li {
   margin-right: 25px;
 }
 /* 버튼 */
-button {
+/* button {
   -webkit-appearance: none;
   background: transparent;
   border: 0;
   outline: 0;
-}
+} */
 
 svg {
   padding: 5px;
@@ -42,6 +42,10 @@ svg {
   cursor: pointer;
   position: absolute;
   top: calc(50% - 16px);
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
 }
 
 .left {

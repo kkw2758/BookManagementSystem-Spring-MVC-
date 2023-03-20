@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./navStyle.css" />
+    <link rel="stylesheet" href="./slideStyle.css" />
+    <link rel="stylesheet" href="./tableStyle.css" />
+    <title>BMS</title>
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn">국내만화</button>
+        <div class="dropdown-content">
+          <a href="#">순정만화</a>
+          <a href="#">소년만화</a>
+          <a href="#">성인만화</a>
+          <a href="#">기획도서</a>
+          <a href="#">만화잡지</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">일본만화</button>
+        <div class="dropdown-content">
+          <a href="#">순정만화</a>
+          <a href="#">소년만화</a>
+          <a href="#">성인만화</a>
+          <a href="#">기획도서</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">미국만화</button>
+        <div class="dropdown-content">
+          <a href="#">DC 코믹스마블</a>
+          <a href="#">코믹스리터러리</a>
+          <a href="#">그래픽노블</a>
+        </div>
+      </div>
+      <a href="javascript:void(0);" class="icon">&#9776;</a>
+    </div>
+    <div class="slide_wrapper">
+      <ul class="slides">
+        <li><img src="./image/ONE PIECE 100.jpg" /></li>
+        <li><img src="./image/나루토 1.jpg" /></li>
+        <li><img src="./image/귀멸의 칼날 8.jpg" /></li>
+        <li><img src="./image/나의 히어로 아카데미아 21.jpg" /></li>
+        <li><img src="./image/스파이 패밀리 1.jpg" /></li>
+        <li><img src="./image/주술회전 11.jpg" /></li>
+        <li><img src="./image/강철의 연금술사 1.jpg" /></li>
+        <li><img src="./image/데스노트 3.jpg" /></li>
+        <li><img src="./image/미생 1.jpg" /></li>
+        <li><img src="./image/신과함께 1.jpg" /></li>
+      </ul>
+      <!-- <div class="slide_button slide_prev_button">1</div>
+        <div class="slide_button slide_next_button">2</div> -->
+      <!-- 화살표 버튼 -->
+      <button class="arrow left">
+        <svg
+          width="21px"
+          height="27px"
+          viewBox="0 0 50 80"
+          xml:space="preserve"
+        >
+          <polyline
+            fill="none"
+            stroke="#000"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            points="
+            45.63,75.8 0.375,38.087 45.63,0.375 "
+          />
+        </svg>
+      </button>
+      <button class="arrow right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          width="21px"
+          height="27px"
+          viewBox="0 0 50 80"
+          xml:space="preserve"
+        >
+          <polyline
+            fill="none"
+            stroke="#000"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            points="
+            0.375,0.375 45.63,38.087 0.375,75.8 "
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      style="text-align: end; width: 845px; margin: 0 auto; padding-top: 10px"
+    >
+      <input type="text" placeholder="키워드를 입력해주세요" />
+      <button>검색</button>
+      <button>생성</button>
+    </div>
+    <input
+      class="basic-slide"
+      id="name"
+      type="text"
+      placeholder="Your best name"
+    /><label for="name">Name</label>
+
+    <p
+      style="
+        width: 845px;
+        margin: 0 auto;
+        font-weight: bold;
+        padding-left: 20px;
+      "
+    >
+      ▶ HOME
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>제목</th>
+          <th>카테고리</th>
+          <th>가격</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>이토 준지 걸작집 11 궤담</td>
+          <td>공포</td>
+          <td>10,000원</td>
+        </tr>
+        <tr>
+          <td>신의 지문 1~4(완)</td>
+          <td>판타지</td>
+          <td>8,000원</td>
+        </tr>
+        <tr>
+          <td>슬램덩크 오리지널 8</td>
+          <td>스포츠</td>
+          <td>5,000원</td>
+        </tr>
+        <tr>
+          <td>심야식당 26권</td>
+          <td>일상</td>
+          <td>7,000원</td>
+        </tr>
+        <tr>
+          <td>:</td>
+          <td>:</td>
+          <td>:</td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="./navScript.js"></script>
+    <script src="./slideScript.js"></script>
+  </body>
+</html>
