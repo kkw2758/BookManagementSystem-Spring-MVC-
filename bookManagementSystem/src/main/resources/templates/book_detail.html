@@ -35,7 +35,7 @@
 		class="delete btn btn-sm btn-outline-secondary" th:text="삭제"> </a>
 </div>
 
-<script layout:fragment="script" type="text/javascript">
+<script layout:fragment="script" type="text/javascript">	
 	const delete_elements = document.getElementsByClassName("delete");
 	Array.from(delete_elements).forEach(function(element) {
 		element.addEventListener("click", function() {

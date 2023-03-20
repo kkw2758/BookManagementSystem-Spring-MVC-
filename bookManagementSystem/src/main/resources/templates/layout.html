@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, initail-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/navStyle.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/slideStyle.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/tableStyle.css}">
 <title>bookManagementSystem</title>
 </head>
 <body>
@@ -14,10 +15,8 @@
 	<!-- 기존 템플릿 안에 삽입될 내용 Start -->
 	<th:block layout:fragment="content"></th:block>
 	<!-- 기존 템플릿 안에 삽입될 내용 End -->
-
-	<!-- Bootstrap JS -->
-	<script th:src="@{/bootstrap.min.js}"></script>
 	<!-- 자바스크립트 Start -->
 	<th:block layout:fragment="script"></th:block>
+	<script type="text/javascript" th:src="@{/js/navScript.js}"></script>
 </body>
 </html>
