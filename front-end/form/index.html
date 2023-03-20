@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <title>form태그 input태그</title>
+  </head>
+  <style>
+    .formContainer {
+      width: 800px;
+      margin: 0 auto;
+    }
+    table {
+      border-top: 1px solid black;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .formValue {
+      font-size: 20px;
+      width: 100%;
+    }
+    select.formValue {
+      text-align: center;
+    }
+
+    .form {
+      margin: 0 auto;
+      width: 845px;
+    }
+    th,
+    td {
+      border-bottom: 1px solid black;
+      border-left: 1px solid black;
+      padding: 10px;
+    }
+
+    table tr td:first-child {
+      font-weight: bold;
+      text-align: right;
+      background-color: #f0f0f0;
+    }
+    th:first-child,
+    td:first-child {
+      border-left: none;
+    }
+  </style>
+
+  <body>
+    <div class="formContainer">
+      <h3>▶ 책 생성</h3>
+      <form>
+        <table>
+          <tr>
+            <td>제목</td>
+            <td>
+              <input
+                class="formValue"
+                name="firstname"
+                type="text"
+                value="name"
+              /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>카테고리</td>
+            <td>
+              <input
+                class="formValue"
+                maxlength="10"
+                name="id"
+                type="text"
+              /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>국가</td>
+            <td>
+              <select class="nation formValue" name="nation">
+                <option value="한국">한국</option>
+                <option value="일본">일본</option>
+                <option value="미국">미국</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>장르</td>
+            <td>
+              <select class="genre formValue" name="genre">
+                <option value="순정만화">순정만화</option>
+                <option value="소년만화">소년만화</option>
+                <option value="성인만화">성인만화</option>
+                <option value="기획도서">기획도서</option>
+                <option value="만화잡지">만화잡지</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>가격</td>
+            <td>
+              <input
+                class="inputNumber formValue"
+                style="text-align: right"
+                type="text"
+              />
+            </td>
+          </tr>
+        </table>
+        <div style="text-align: right; margin-top: 10px">
+          <input
+            style="
+              border: 2px solid #7b40a6;
+              background-color: transparent;
+              color: #7b40a6;
+            "
+            type="submit"
+            value="저장"
+          />
+        </div>
+      </form>
+    </div>
+    <script>
+      const nationGenreMapping = {
+        한국: ["순정만화", "소년만화", "성인만화", "기획도서", "만화잡지"],
+        일본: ["순정만화", "소년만화", "성인만화", "기획도서"],
+        미국: ["DC 코믹스마블", "코믹스리터러리", "그래픽노블"],
+      };
+
+      const inputNumber = document.querySelector(".inputNumber");
+      inputNumber.addEventListener("keyup", function (e) {
+        let value = e.target.value;
+        value = Number(value.replaceAll(",", ""));
+        if (isNaN(value)) {
+          inputNumber.value = 0;
+        } else {
+          const formatValue = value.toLocaleString("ko-KR");
+          inputNumber.value = formatValue;
+        }
+      });
+
+      const nation = document.querySelector(".nation");
+      const genre = document.querySelector(".genre");
+      console.log(nation.innerHTML);
+      nation.addEventListener("change", (event) => {
+        const mappedGenre = nationGenreMapping[event.target.value];
+        let newHtml = "";
+        for (let i = 0; i < mappedGenre.length; i++) {
+          newHtml += `<option value=${mappedGenre[i]}>${mappedGenre[i]}</option>`;
+        }
+        console.log(newHtml);
+        genre.innerHTML = newHtml;
+      });
+    </script>
+  </body>
+</html>
