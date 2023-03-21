@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>form태그 input태그</title>
+  </head>
+  <style>
+    .detailContainer {
+      width: 800px;
+      margin: 0 auto;
+    }
+    table {
+      border-top: 1px solid black;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th,
+    td {
+      border-bottom: 1px solid black;
+      border-left: 1px solid black;
+      padding: 10px;
+    }
+
+    table tr td:first-child {
+      font-weight: bold;
+      text-align: right;
+      background-color: #f0f0f0;
+    }
+    th:first-child,
+    td:first-child {
+      border-left: none;
+    }
+  </style>
+
+  <body>
+    <div class="detailContainer">
+      <h3>▶ 책 상세</h3>
+      <table>
+        <tr>
+          <td>제목</td>
+          <td>슬램덩크 오리지널 8</td>
+        </tr>
+        <tr>
+          <td>카테고리</td>
+          <td>스포츠</td>
+        </tr>
+        <tr>
+          <td>국가</td>
+          <td>일본</td>
+        </tr>
+        <tr>
+          <td>장르</td>
+          <td>소년만화</td>
+        </tr>
+        <tr>
+          <td>가격</td>
+          <td>5,000원</td>
+        </tr>
+        <tr>
+          <td>입력일</td>
+          <td>2023.03.15 13.22.33</td>
+        </tr>
+      </table>
+      <div style="text-align: right; margin-top: 10px">
+        <button
+          onclick="location.href='/book/modify'"
+          style="
+            border: 2px solid #7b40a6;
+            background-color: transparent;
+            color: #7b40a6;
+            cursor: pointer;
+          "
+        >
+          수정
+        </button>
+        <button
+          onclick="location.href='/book/delete'"
+          style="
+            border: 2px solid #7b40a6;
+            background-color: transparent;
+            color: #7b40a6;
+            cursor: pointer;
+          "
+        >
+          삭제
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

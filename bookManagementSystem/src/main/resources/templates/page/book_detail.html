@@ -1,0 +1,65 @@
+<html layout:decorate="~{layout/layout}">
+<th:block layout:fragment="css">
+	<link rel="stylesheet" th:href="@{/css/detailStyle.css}">
+</th:block>
+<div layout:fragment="content" class="detailContainer">
+	<h3>▶ 책 상세</h3>
+	<table>
+		<tr>
+			<th>제목</th>
+			<td th:text="${book.title}"></td>
+		</tr>
+		<tr>
+			<th>카테고리</th>
+			<td th:text="${book.category}"></td>
+		</tr>
+		<tr>
+			<th>국가</th>
+			<td th:text="${book.nation}"></td>
+		</tr>
+		<tr>
+			<th>장르</th>
+			<td th:text="${book.genre}"></td>
+		</tr>
+		<tr>
+			<th>가격</th>
+			<td id="price" th:text="${book.price}"></td>
+		</tr>
+		<tr>
+			<th>입력일
+			</th>
+			<td
+				th:text="${#temporals.format(book.insertDate,'yyyy-MM-dd  HH:mm:ss')}"></td>
+			<!-- <td th:text="${book.insertDate}"></td> -->
+		</tr>
+	</table>
+	<div style="text-align: right; margin-top: 10px">
+		<button class="modifyBtn" th:data-uri="@{|/book/modify/${book.id}|}"
+			style="border: 2px solid #7b40a6; background-color: transparent; color: #7b40a6; cursor: pointer;">
+			수정</button>
+		<button class="deleteBtn" th:data-uri="@{|/book/delete/${book.id}|}"
+			style="border: 2px solid #7b40a6; background-color: transparent; color: #7b40a6; cursor: pointer;">
+			삭제</button>
+	</div>
+</div>
+
+<th:block layout:fragment="bodyScript">
+	<!-- <script type="text/javascript" th:src="@{/js/slideScript.js}"></script> -->
+	<script>
+		const price = document.querySelector("#price");
+		// console.log(Number(price.innerText).toLocaleString("ko-KR") + "원");
+		price.innerText = Number(price.innerText).toLocaleString("ko-KR") + "원";
+
+		const deleteBtn = document.querySelector(".deleteBtn");
+		const modifyBtn = document.querySelector(".modifyBtn");
+		
+		deleteBtn.addEventListener("click", function() {
+			if (confirm("정말로 삭제하시겠습니까?")) {
+				location.href = this.dataset.uri;
+			}
+		});
+		modifyBtn.addEventListener("click", function() {
+			location.href = this.dataset.uri;
+		});
+	</script>
+</th:block>

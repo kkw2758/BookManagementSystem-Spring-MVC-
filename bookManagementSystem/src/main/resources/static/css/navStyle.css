@@ -6,7 +6,7 @@
 }
 
 /* Style the links inside the navigation bar */
-.topnav a {
+.topnav a{
   float: left;
   display: block;
   color: #f2f2f2;
@@ -16,9 +16,8 @@
   font-size: 17px;
 }
 
-/* Add an active class to highlight the current page */
 .active {
-  background-color: #04aa6d;
+  background-color: #04AA6D;
   color: white;
 }
 
@@ -28,13 +27,13 @@
 }
 
 /* Dropdown container - needed to position the dropdown content */
-.dropdown {
+.dropdown, .homeBtn {
   float: left;
   overflow: hidden;
 }
 
 /* Style the dropdown button to fit inside the topnav */
-.dropdown .dropbtn {
+.dropdown .dropbtn, .homeBtn {
   font-size: 17px;
   border: none;
   outline: none;
@@ -65,9 +64,15 @@
   text-align: left;
 }
 
+/* Add an active class to highlight the current page */
+.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
 /* Add a dark background on topnav links and the dropdown button on hover */
 .topnav a:hover,
-.dropdown:hover .dropbtn {
+.dropdown:hover .dropbtn ,.homeBtn:hover{
   background-color: #555;
   color: white;
 }

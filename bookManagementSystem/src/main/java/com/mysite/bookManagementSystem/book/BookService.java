@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.mysite.bookManagementSystem.DataNotFoundException;
@@ -19,7 +20,7 @@ public class BookService {
 		this.bookRepository.delete(book);
 	}
 	public List<Book> getList() {
-		return this.bookRepository.findAll();
+		return this.bookRepository.findAll(Sort.by(Sort.Direction.DESC, "insertDate"));
 	}
 
 	public Book getBook(Integer id) {

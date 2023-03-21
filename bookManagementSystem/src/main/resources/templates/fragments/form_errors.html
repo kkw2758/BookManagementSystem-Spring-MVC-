@@ -1,0 +1,5 @@
+<div th:fragment="formErrorsFragment" style="background-color: #f8d7da; border-radius: 5px; margin-bottom: 10px; padding-left: 10px;"
+	role="alert" th:if="${#fields.hasAnyErrors()}">
+	<div style="color: #881c59; font-weight: bold;">경고!</div>
+	<div style="color: #881c59;" th:each="err : ${#fields.allErrors()}" th:text="${err}" />
+</div>

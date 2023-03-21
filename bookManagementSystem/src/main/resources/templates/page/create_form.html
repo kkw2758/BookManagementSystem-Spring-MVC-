@@ -1,0 +1,90 @@
+<html layout:decorate="~{layout/layout}">
+<th:block layout:fragment="css">
+	<link rel="stylesheet" th:href="@{/css/formStyle.css}">
+</th:block>
+<div layout:fragment="content">
+	<div class="formContainer">
+		<h3>▶ 책 생성</h3>
+		<form th:action="@{/book/create}" th:object="${bookForm}"
+			method="POST">
+			<div th:replace="~{fragments/form_errors::formErrorsFragment}"></div>
+			<table>
+				<tr>
+					<td><label for="title">제목</label></td>
+					<td><input class="formValue" th:field="*{title}" type="text" /><br />
+					</td>
+				</tr>
+				<tr>
+					<td><label for="category">카테고리</label></td>
+					<td><input class="formValue" maxlength="10" name="id"
+						th:field="*{category}" type="text" /><br /></td>
+				</tr>
+				<tr>
+					<td><label for="nation">국가</label></td>
+					<td><select class="nation formValue" id="nation" name="nation">
+							<option value="한국">한국</option>
+							<option value="일본">일본</option>
+							<option value="미국">미국</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="genre">장르</label></td>
+					<td><select class="genre formValue" id="genre" name="genre">
+							<option value="순정만화">순정만화</option>
+							<option value="소년만화">소년만화</option>
+							<option value="성인만화">성인만화</option>
+							<option value="기획도서">기획도서</option>
+							<option value="만화잡지">만화잡지</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="price">가격</label></td>
+					<td><input class="inputNumber formValue"
+						style="text-align: right" th:field="*{price}" type="text" /></td>
+				</tr>
+			</table>
+			<div style="text-align: right; margin-top: 10px">
+				<input
+					style="border: 2px solid #7b40a6; background-color: transparent; color: #7b40a6; cursor: pointer;"
+					type="submit" value="저장" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<th:block layout:fragment="bodyScript">
+	<script type="text/javascript" th:src="@{/js/formScript.js}"></script>
+</th:block>
+</th:block>
+</html>
+
+
+
+<!-- 
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container">
+	<h5>책 등록</h5>
+	<form th:object="${bookForm}" method="POST">
+		<div class="alert alert-danger" role="alert"
+			th:if="${#fields.hasAnyErrors()}">
+			<div th:each="err : ${#fields.allErrors()}" th:text="${err}" />
+		</div>
+		<div class="mb-3">
+			<label for="title">제목</label> <input th:field="*{title}" id="title">
+		</div>
+		<div class="mb-3">
+			<label for="category">카테고리</label> <input th:field="*{category}"></input>
+		</div>
+		<div class="mb-3">
+			<label for="nation">국가</label> <input th:field="*{nation}"></input>
+		</div>
+		<div class="mb-3">
+			<label for="genre">장르</label> <input th:field="*{genre}"></input>
+		</div>
+		<div class="mb-3">
+			<label for="price">가격</label> <input th:field="*{price}"></input>
+		</div>
+		<input type="submit" value="저장하기">
+	</form>
+</div>
+</html> -->

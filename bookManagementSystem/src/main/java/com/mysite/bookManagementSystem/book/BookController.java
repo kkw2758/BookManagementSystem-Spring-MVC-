@@ -23,7 +23,7 @@ public class BookController {
 	public String detail(Model model, @PathVariable("id") Integer id) {
 		Book book = this.bookService.getBook(id);
 		model.addAttribute("book", book);
-		return "book_detail";
+		return "/page/book_detail";
 	}
 
 	@GetMapping("/modify/{id}")
@@ -34,7 +34,7 @@ public class BookController {
 		bookForm.setNation(book.getNation());
 		bookForm.setGenre(book.getGenre());
 		bookForm.setPrice(book.getPrice());
-		return "book_form";
+		return "/page/modify_form";
 	}
 	
 	@PostMapping("/modify/{id}")
@@ -50,13 +50,13 @@ public class BookController {
 	
 	@GetMapping("/create")
 	public String bookCreate(BookForm bookForm) {
-		return "book_form";
+		return "/page/create_form";
 	}
 
 	@PostMapping("/create")
 	public String bookCreate(@Valid BookForm bookForm, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
-			return "book_form";
+			return "/page/create_form";
 		}
 		this.bookService.create(bookForm.getTitle(), bookForm.getCategory(), bookForm.getNation(), bookForm.getGenre(),
 				bookForm.getPrice());

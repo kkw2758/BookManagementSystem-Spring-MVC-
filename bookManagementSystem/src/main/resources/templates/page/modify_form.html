@@ -1,0 +1,59 @@
+<html layout:decorate="~{layout/layout}">
+<th:block layout:fragment="css">
+	<link rel="stylesheet" th:href="@{/css/formStyle.css}">
+</th:block>
+<div layout:fragment="content">
+	<!-- <div th:text="${bookForm.nation}"></div> -->
+	<div class="formContainer">
+		<h3>▶ 책 수정</h3>
+		<form th:object="${bookForm}" method="POST">
+			<div th:replace="~{fragments/form_errors::formErrorsFragment}"></div>
+			<table>
+				<tr>
+					<td><label for="title">제목</label></td>
+					<td><input class="formValue" th:field="*{title}" type="text" /><br />
+					</td>
+				</tr>
+				<tr>
+					<td><label for="category">카테고리</label></td>
+					<td><input class="formValue" maxlength="10" name="id"
+						th:field="*{category}" type="text" /><br /></td>
+				</tr>
+				<tr>
+					<td><label for="nation">국가</label></td>
+					<td><select class="nation formValue" id="nation" name="nation">
+							<option value="한국" th:selected="'한국' == ${bookForm.nation}">한국</option>
+							<option value="일본" th:selected="'일본' == ${bookForm.nation}">일본</option>
+							<option value="미국" th:selected="'미국' == ${bookForm.nation}">미국</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="genre">장르</label></td>
+					<td><select class="genre formValue" id="genre" name="genre">
+							<option value="순정만화" th:selected="'순정만화' == ${bookForm.genre}">순정만화</option>
+							<option value="소년만화" th:selected="'소년만화' == ${bookForm.genre}">소년만화</option>
+							<option value="성인만화" th:selected="'성인만화' == ${bookForm.genre}">성인만화</option>
+							<option value="기획도서" th:selected="'기획도서' == ${bookForm.genre}">기획도서</option>
+							<option value="만화잡지" th:selected="'만화잡지' == ${bookForm.genre}">만화잡지</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="price">가격</label></td>
+					<td><input class="inputNumber formValue"
+						style="text-align: right" th:field="*{price}" type="text" /></td>
+				</tr>
+			</table>
+			<div style="text-align: right; margin-top: 10px">
+				<input
+					style="border: 2px solid #7b40a6; background-color: transparent; color: #7b40a6; cursor: pointer;"
+					type="submit" value="저장" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<th:block layout:fragment="bodyScript">
+	<script type="text/javascript" th:src="@{/js/formScript.js}"></script>
+</th:block>
+</th:block>
+</html>

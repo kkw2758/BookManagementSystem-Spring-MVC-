@@ -1,0 +1,25 @@
+.detailContainer {
+	width: 800px;
+	margin: 0 auto;
+}
+
+table {
+	border-top: 1px solid black;
+	border-collapse: collapse;
+	width: 100%;
+}
+td, th {
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	padding: 10px;
+}
+
+th {
+	font-weight: bold;
+	text-align: right;
+	background-color: #f0f0f0;
+}
+
+th:first-child, td:first-child {
+	border-left: none;
+}

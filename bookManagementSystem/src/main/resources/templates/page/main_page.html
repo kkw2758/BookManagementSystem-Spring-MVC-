@@ -1,0 +1,108 @@
+<html layout:decorate="~{layout/layout}">
+<th:block layout:fragment="css">
+	<link rel="stylesheet" th:href="@{/css/slideStyle.css}">
+	<link rel="stylesheet" th:href="@{/css/tableStyle.css}">
+</th:block>
+<div layout:fragment="content">
+	<div class="slide_wrapper">
+		<ul class="slides">
+			<li><img src="./image/ONE PIECE 100.jpg" /></li>
+			<li><img src="./image/나루토 1.jpg" /></li>
+			<li><img src="./image/귀멸의 칼날 8.jpg" /></li>
+			<li><img src="./image/나의 히어로 아카데미아 21.jpg" /></li>
+			<li><img src="./image/스파이 패밀리 1.jpg" /></li>
+			<li><img src="./image/주술회전 11.jpg" /></li>
+			<li><img src="./image/강철의 연금술사 1.jpg" /></li>
+			<li><img src="./image/데스노트 3.jpg" /></li>
+			<li><img src="./image/미생 1.jpg" /></li>
+			<li><img src="./image/신과함께 1.jpg" /></li>
+		</ul>
+		<button class="arrow left">
+			<svg width="21px" height="27px" viewBox="0 0 50 80"
+				xml:space="preserve">
+          <polyline fill="none" stroke="#000" stroke-width="1"
+					stroke-linecap="round" stroke-linejoin="round"
+					points="
+            45.63,75.8 0.375,38.087 45.63,0.375 " />
+        </svg>
+		</button>
+		<button class="arrow right">
+			<svg xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink" width="21px"
+				height="27px" viewBox="0 0 50 80" xml:space="preserve">
+          <polyline fill="none" stroke="#000" stroke-width="1"
+					stroke-linecap="round" stroke-linejoin="round"
+					points="
+            0.375,0.375 45.63,38.087 0.375,75.8 " />
+        </svg>
+		</button>
+	</div>
+	<div
+		style="text-align: end; width: 845px; margin: 0 auto; padding-top: 10px">
+		<input type="text" placeholder="키워드를 입력해주세요" />
+		<button class="normalBtn"
+			th:onclick="|location.href='@{/book/create}'|">검색</button>
+		<button class="normalBtn"
+			th:onclick="|location.href='@{/book/create}'|">생성</button>
+	</div>
+
+	<p class="status"
+		style="width: 835px; margin: 0 auto; font-weight: bold; padding-left: 10px; border-bottom: 1.5px #7b40a6 solid;">
+		▶ HOME</p>
+	<table>
+		<thead>
+			<tr>
+				<th>제목</th>
+				<th>카테고리</th>
+				<th>가격</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="book : ${bookList}">
+				<td><a style="text-decoration: none; color: black;" th:href="@{|/book/detail/${book.id}|}"
+					th:text="${book.title}"> </a></td>
+				<td th:text="${book.category}"></td>
+				<td class="price" th:text="${book.price}"></td>
+			</tr>
+			<tr>
+				<td>:</td>
+				<td>:</td>
+				<td>:</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<th:block layout:fragment="bodyScript">
+	<script>
+		const prices = document.querySelectorAll(".price");
+		for (var i = 0; i < prices.length; i ++) {
+			prices[i].innerText = Number(prices[i].innerText).toLocaleString("ko-KR") + "원";
+		}
+	</script>
+	<script type="text/javascript" th:src="@{/js/slideScript.js}"></script>
+</th:block>
+</html>
+
+
+<!-- <html layout:decorate="~{layout}"></html>
+<div layout:fragment="content">
+	<table>
+		<thead>
+			<tr>
+				<th>제목</th>
+				<th>카테고리</th>
+				<th>가격</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="book : ${bookList}">
+				<td><a th:href="@{|/book/detail/${book.id}|}"
+					th:text="${book.title}"> </a></td>
+				<td th:text="${book.category}"></td>
+				<td th:text="${book.price}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<a th:href="@{/book/create}"
+		class="btn btn-sm btn-outline-secondary" th:text="생성"></a>
+</div> -->

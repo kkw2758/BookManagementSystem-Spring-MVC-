@@ -21,6 +21,6 @@ public class MainController {
 	public String mainPage(Model model) {
 		List<Book> bookList = this.bookService.getList();
 		model.addAttribute("bookList", bookList);
-		return "main_page";
+		return "page/main_page";
 	}
 }
