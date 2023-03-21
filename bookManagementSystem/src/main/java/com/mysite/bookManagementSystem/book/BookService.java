@@ -52,4 +52,14 @@ public class BookService {
 		book.setInsertDate(LocalDateTime.now());
 		this.bookRepository.save(book);
 	}
+	
+	// 참고 : https://lovemewithoutall.github.io/it/spring-data-sort/
+	public List<Book> getBookByNationAndGenre(String nation, String genre) {
+		Sort sort = sortByInsertDate();
+		return this.bookRepository.findByNationAndGenre(nation, genre, sort);
+	}
+	
+	private Sort sortByInsertDate() {
+		return Sort.by(Sort.Direction.DESC, "insertDate");
+	}
 }

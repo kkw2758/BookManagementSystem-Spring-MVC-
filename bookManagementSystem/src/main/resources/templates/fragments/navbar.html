@@ -1,32 +1,32 @@
 <div th:fragment="navbarFragment" class="topnav" id="myTopnav">
 	<!-- <a th:href="@{/}" class="active">Home</a> -->
-	<button class="homeBtn active"
+	<button class="homeBtn"
 			th:onclick="|location.href='@{/}'|">Home</button>
 	<div class="dropdown">
 		<button class="dropbtn active">국내만화</button>
 		<div class="dropdown-content">
-			<a href="#">순정만화</a>
-			<a href="#">소년만화</a>
-			<a href="#">성인만화</a>
-			<a href="#">기획도서</a>
-			<a>만화잡지</a>
+			<a th:href="@{/list(nation='한국', genre='순정만화')}">순정만화</a>
+			<a th:href="@{/list(nation='한국', genre='소년만화')}">소년만화</a>
+			<a th:href="@{/list(nation='한국', genre='성인만화')}">성인만화</a>
+			<a th:href="@{/list(nation='한국', genre='기획도서')}">기획도서</a>
+			<a th:href="@{/list(nation='한국', genre='만화잡지')}">만화잡지</a>
 		</div>
 	</div>
 	<div class="dropdown">
 		<button class="dropbtn">일본만화</button>
 		<div class="dropdown-content">
-			<a href="#">순정만화</a>
-			<a href="#">소년만화</a>
-			<a href="#">성인만화</a>
-			<a href="#">기획도서</a>
+			<a th:href="@{/list(nation='일본', genre='순정만화')}">순정만화</a>
+			<a th:href="@{/list(nation='일본', genre='소년만화')}">소년만화</a>
+			<a th:href="@{/list(nation='일본', genre='성인만화')}">성인만화</a>
+			<a th:href="@{/list(nation='일본', genre='기획도서')}">기획도서</a>
 		</div>
 	</div>
 	<div class="dropdown">
 		<button class="dropbtn">미국만화</button>
 		<div class="dropdown-content">
-			<a href="#">DC 코믹스마블</a>
-			<a href="#">코믹스리터러리</a>
-			<a href="#">그래픽노블</a>
+			<a th:href="@{/list(nation='미국', genre='DC 코믹스마블')}">DC 코믹스마블</a>
+			<a th:href="@{/list(nation='미국', genre='코믹스리터러리')}">코믹스리터러리</a>
+			<a th:href="@{/list(nation='미국', genre='그래픽노블')}">그래픽노블</a>
 		</div>
 	</div>
 	<a href="javascript:void(0);" class="icon">&#9776;</a>

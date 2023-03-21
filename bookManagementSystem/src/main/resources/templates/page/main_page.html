@@ -39,14 +39,14 @@
 	</div>
 	<div
 		style="text-align: end; width: 845px; margin: 0 auto; padding-top: 10px">
-		<input type="text" placeholder="키워드를 입력해주세요" />
-		<button class="normalBtn"
+		<input id="keyword" type="text" placeholder="키워드를 입력해주세요" />
+		<button class="searchBtn purpleBtn"
 			th:onclick="|location.href='@{/book/create}'|">검색</button>
-		<button class="normalBtn"
+		<button class="createBtn purpleBtn"
 			th:onclick="|location.href='@{/book/create}'|">생성</button>
 	</div>
 
-	<p class="status"
+	<p class="status" th:text="|▶${keyword}|"
 		style="width: 835px; margin: 0 auto; font-weight: bold; padding-left: 10px; border-bottom: 1.5px #7b40a6 solid;">
 		▶ HOME</p>
 	<table>
@@ -80,6 +80,7 @@
 		}
 	</script>
 	<script type="text/javascript" th:src="@{/js/slideScript.js}"></script>
+	<script type="text/javascript" th:src="@{/js/navScript.js}"></script>
 </th:block>
 </html>
 
