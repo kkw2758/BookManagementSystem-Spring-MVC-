@@ -62,4 +62,12 @@ public class BookService {
 	private Sort sortByInsertDate() {
 		return Sort.by(Sort.Direction.DESC, "insertDate");
 	}
+	
+	public List<Book> getBookByNationLike(String pattern) {
+		return bookRepository.findByNationLike(pattern);
+	}
+	
+	public List<Book> getBookByGenreLike(String pattern) {
+		return bookRepository.findByGenreLike(pattern);
+	}
 }

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.purpleBtn {
+	border: 2px solid #7b40a6;
+	background-color: transparent;
+	color: #7b40a6;
+	cursor: pointer;
+	padding: 2px;
+}
+
+#keyword {
+	border: 2px solid #7b40a6;
+	background-color: transparent;
+	color: #7b40a6;
+	padding: 2px;
+}

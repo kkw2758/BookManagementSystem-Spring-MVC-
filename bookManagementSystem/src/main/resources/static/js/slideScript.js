@@ -60,7 +60,7 @@ prevBtn.addEventListener("click", function() {
 function moveSlide(num) {
 	slides.style.left = -num * (slideWidth + slideMargin) + "px";
 	currentIdx = num;
-	console.log(currentIdx, slideCount);
+	//console.log(currentIdx, slideCount);
 
 	if (currentIdx == slideCount || currentIdx == -slideCount) {
 		setTimeout(function() {

@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Integer>{
 	List<Book> findByNationAndGenre(String nation, String genre, Sort sort);
+	List<Book> findByNationLike(String nation);
+	List<Book> findByGenreLike(String genre);
 }

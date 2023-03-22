@@ -37,6 +37,7 @@ const form = document.querySelector("form");
 form.addEventListener("submit", function(event) {
 	event.preventDefault();
 	event.target.price.value = event.target.price.value.replace(/,/g, "");
+	console.log(event.target.price.value.replace(/,/g, ""));
 	//console.log(event.target.price.value);
 	form.submit();
 })

@@ -1,9 +1,9 @@
 <div th:fragment="navbarFragment" class="topnav" id="myTopnav">
 	<!-- <a th:href="@{/}" class="active">Home</a> -->
-	<button class="homeBtn"
+	<button class="homeBtn Home"
 			th:onclick="|location.href='@{/}'|">Home</button>
 	<div class="dropdown">
-		<button class="dropbtn active">국내만화</button>
+		<button class="dropbtn 한국">한국만화</button>
 		<div class="dropdown-content">
 			<a th:href="@{/list(nation='한국', genre='순정만화')}">순정만화</a>
 			<a th:href="@{/list(nation='한국', genre='소년만화')}">소년만화</a>
@@ -13,7 +13,7 @@
 		</div>
 	</div>
 	<div class="dropdown">
-		<button class="dropbtn">일본만화</button>
+		<button class="dropbtn 일본">일본만화</button>
 		<div class="dropdown-content">
 			<a th:href="@{/list(nation='일본', genre='순정만화')}">순정만화</a>
 			<a th:href="@{/list(nation='일본', genre='소년만화')}">소년만화</a>
@@ -22,7 +22,7 @@
 		</div>
 	</div>
 	<div class="dropdown">
-		<button class="dropbtn">미국만화</button>
+		<button class="dropbtn 미국">미국만화</button>
 		<div class="dropdown-content">
 			<a th:href="@{/list(nation='미국', genre='DC 코믹스마블')}">DC 코믹스마블</a>
 			<a th:href="@{/list(nation='미국', genre='코믹스리터러리')}">코믹스리터러리</a>
