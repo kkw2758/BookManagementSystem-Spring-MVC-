@@ -5,17 +5,21 @@
 <meta charset="UTF-8">
 <title>Title</title>
 <link rel="stylesheet" type="text/css" th:href="@{/css/navStyle.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/headerStyle.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/footerStyle.css}">
 <th:block th:replace="~{fragments/config::configFragment}"></th:block>
 </head>
 <body>
-	<div th:replace="~{fragments/navbar::navbarFragment}"></div>
 
 	<div th:replace="~{fragments/header::headerFragment}"></div>
+	
+	<div th:replace="~{fragments/navbar::navbarFragment}"></div>
 
 	<div layout:fragment="content"></div>
 
 	<div th:replace="~{fragments/footer::footerFragment}"></div>
 
-	<th:block layout:fragment="bodyScript"></div>
+	<th:block layout:fragment="bodyScript">
+		</div>
 </body>
 </html>

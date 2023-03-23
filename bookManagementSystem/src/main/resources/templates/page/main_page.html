@@ -51,6 +51,11 @@
 	<p class="status" th:text="|▶${keyword}|"
 		style="width: 835px; margin: 0 auto; font-weight: bold; padding-left: 10px; border-bottom: 1.5px #7b40a6 solid;"></p>
 	<table>
+		<colgroup>
+			<col width="50%" />
+			<col width="30%" />
+			<col width="20%" />
+		</colgroup>
 		<thead>
 			<tr>
 				<th>제목</th>
@@ -95,6 +100,12 @@
 			  var httpRequest;
 			  const searchBtn = document.querySelector(".searchBtn");
 			  const keyword = document.querySelector("#keyword");
+			  keyword.addEventListener("keyup", (event) => {
+				  if (window.event.keyCode == 13) {
+					  searchBtn.click();
+				  }
+			  });
+			  
 			  searchBtn.addEventListener("click", () => {
 			    if (keyword.value.length < 2) {
 			      alert("두글자 이상 입력해주세요.");

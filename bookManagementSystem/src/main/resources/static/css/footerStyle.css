@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.footer_section {
+	margin: 0 auto;
+	text-align: center;
+	width: 845px;
+}
+
+.footer_list_box {
+	display: flex;
+	justify-content: center;
+}
+
+ul li {
+	list-style: none;
+}
+
+.footer_list_box li a {
+	font-size: 13px;
+	font-weight: bold;
+	margin-left: 10px;
+	text-decoration: none;
+	color: #4f4f4f;
+}
+
+.footer_email_box {
+	padding-top:10px;
+}

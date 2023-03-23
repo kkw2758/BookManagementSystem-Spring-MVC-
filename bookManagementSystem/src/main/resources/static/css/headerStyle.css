@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+#headerContainer {
+	position: relative;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	width: 845px;
+	margin: 0 auto;
+}
+
+.headerContent {
+	display: flex;
+}
+
+.headerContent li {
+	list-style: none;
+	margin-right: 10px;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.headerContent li a {
+	text-decoration: none;
+	color: #4f4f4f;
+}
+
+h1 a {
+	text-decoration: none;
+	color: #4f4f4f;
+	font-size:40px;
+}
